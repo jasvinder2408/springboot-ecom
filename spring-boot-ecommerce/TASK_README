@@ -1,0 +1,19 @@
+Date: 25/june
+TASK 1: Fetch all the product from Product table and return the response in below format:
+
+{
+	"products": [{
+			"name": "JavaScript - The Fun Parts",
+			"id": 1,
+			"imageUrl": ""
+		},
+
+		{
+			"name": "",
+			"id": 123,
+			"imageUrl": ""
+		}
+	]
+
+}
+
