@@ -1,16 +1,17 @@
 package com.luv2code.ecommerce.controller;
 
 import com.luv2code.ecommerce.dto.ProductResponseDto;
+
 import com.luv2code.ecommerce.entity.Product;
 import com.luv2code.ecommerce.service.ProductService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -26,4 +27,13 @@ public class ProductController {
         return ResponseEntity.ok(productService.fetchAllProduct());
 
     }
-}
+  //Add a mapping for Get/product/{productId
+  @GetMapping("/all/{productId}")
+  public ResponseEntity<ProductResponseDto>  fetchProduct(@PathVariable("productId") Long id){
+
+      return ResponseEntity.ok(productService.fetchProductById(id));
+
+  }
+    }
+
+

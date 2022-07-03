@@ -17,12 +17,12 @@ public class ProductService {
     @Autowired
     private ProductRepository productRepository;
 
-    /*   public List<Product> fetchAllProduct(){
+       public List<Product> fetchAllProduct1(){
            List<Product> productList=productRepository.findAll();
 
            return productList;
        }
-   */
+
     public List<ProductResponseDto> fetchAllProduct(){
         List<Product> products= productRepository.findAll();
         // List<Demo_Product> demo_products= products.stream().map(product -> new Demo_Product(product.getId(), product.getImageUrl(), product.getName())).collect(Collectors.toList());
@@ -35,5 +35,13 @@ public class ProductService {
         return products1;
     }
 
+    public  ProductResponseDto fetchProductById(Long id){
+          Product product= productRepository.findById(id).get();
+          ProductResponseDto demo_products1=null;
+          if (product!= null){
+              demo_products1= new ProductResponseDto(product.getId(), product.getImageUrl(), product.getName());
+          }
+           return demo_products1 ;
+    }
 
 }
