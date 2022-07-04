@@ -17,3 +17,10 @@ TASK 1: Fetch all the product from Product table and return the response in belo
 
 }
 
+
+
+TASK2: create new get api and fetch product by Id:
+
+localhost:8080/product/<id>
+
+/product/101
