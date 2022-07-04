@@ -29,7 +29,7 @@ public class ProductController {
     }
   //Add a mapping for Get/product/{productId
   @GetMapping("/all/{productId}")
-  public ResponseEntity<ProductResponseDto>  fetchProduct(@PathVariable("productId") Long id){
+  public ResponseEntity<ProductResponseDto>  fetchProductById(@PathVariable("productId") String id){
 
       return ResponseEntity.ok(productService.fetchProductById(id));
 

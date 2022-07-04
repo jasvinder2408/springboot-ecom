@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProductService {
@@ -25,7 +26,6 @@ public class ProductService {
 
     public List<ProductResponseDto> fetchAllProduct(){
         List<Product> products= productRepository.findAll();
-        // List<Demo_Product> demo_products= products.stream().map(product -> new Demo_Product(product.getId(), product.getImageUrl(), product.getName())).collect(Collectors.toList());
         ProductResponseDto demo_products=null;
         ArrayList<ProductResponseDto> products1= new ArrayList<>();
         for (Product product: products){
@@ -35,12 +35,10 @@ public class ProductService {
         return products1;
     }
 
-    public  ProductResponseDto fetchProductById(Long id){
-          Product product= productRepository.findById(id).get();
+    public  ProductResponseDto fetchProductById(String id){
+          Optional<Product> product= productRepository.findById(id);
           ProductResponseDto demo_products1=null;
-          if (product!= null){
-              demo_products1= new ProductResponseDto(product.getId(), product.getImageUrl(), product.getName());
-          }
+              demo_products1= new ProductResponseDto(product.get().getId(), product.get().getImageUrl(), product.get().getName());
            return demo_products1 ;
     }
 
