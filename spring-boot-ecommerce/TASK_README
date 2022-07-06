@@ -24,3 +24,30 @@ TASK2: create new get api and fetch product by Id:
 localhost:8080/product/<id>
 
 /product/101
+
+
+Task:3  Create a functionality for the requested  JSON
+{
+    "productList": [
+        {
+            "name": "",
+            "price": ""
+        }
+    ],
+    "addressDetail": {
+        "street": "",
+        "mobile": ""
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
