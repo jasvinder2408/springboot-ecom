@@ -12,7 +12,7 @@ import java.util.Optional;
 @RepositoryRestResource
 public interface ProductRepository extends JpaRepository<Product, Long> {
 
-    Page<Product> findByCategoryId(@RequestParam("id") Object id, Pageable pageable);
+    Page<Product> findByCategoryId(@RequestParam("id") Long id, Pageable pageable);
 
     Page<Product> findByNameContaining(@RequestParam("name") String name, Pageable pageable);
 

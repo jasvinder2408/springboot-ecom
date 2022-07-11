@@ -9,7 +9,4 @@ public class ProductResponseDto {
     private  String id;
     private String imageUrl;
     private String name;
-
-
-
 }
